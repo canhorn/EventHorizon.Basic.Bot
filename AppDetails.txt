@@ -1,0 +1,5 @@
+EventHorizon.Basic.bot
+
+Commands: 
+    start       Start the bot.
+    exit        Stop the bot and close window.
