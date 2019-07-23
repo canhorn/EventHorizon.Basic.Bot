@@ -1,6 +1,6 @@
 # About
 
-This project is a bear minium library for creating Bots. 
+This project is a bear minimum library for creating Bots.  
 
 ## WebSocket Abstraction
 The project also includes an abstraction around a raw WebSocket to help with event handling and triggering.
