@@ -13,7 +13,7 @@ namespace EventHorizon.Basic.Bot
     {
         static string Url = "irc-ws.chat.twitch.tv";
         static int Port = 443;
-        static string Nickname = "[[BOT_NICKNAME]]>";
+        static string Nickname = "[[BOT_NICKNAME]]";
         static string AccessToken = "[[BOT_ACCESS_TOKEN]]";
         static string MainChannel = "[[BOT_MAIN_CHANNEL]]";
 
@@ -60,9 +60,15 @@ namespace EventHorizon.Basic.Bot
                     MainChannel
                 )
                 {
-                    OnOpen = OnOpen,
-                    OnClose = OnClose,
-                    OnReceived = OnReceived,
+                    OnOpen = () => Task.Run(() => {
+                        Console.WriteLine("OnOpen");
+                    }),
+                    OnClose = (status, description) => Task.Run(() => {
+                        Console.WriteLine("OnClose");
+                    }),
+                    OnReceived = (message) => Task.Run(() => {
+                        Console.WriteLine("OnReceived");
+                    }),
                     OnConnected = () =>
                     {
                         Console.WriteLine("OnConnect");
