@@ -42,6 +42,7 @@ namespace EventHorizon.Basic.Bot
             }
         }
 
+        private static void StartClient()
         {
             if (client != null)
             {
