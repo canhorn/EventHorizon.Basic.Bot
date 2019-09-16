@@ -42,7 +42,6 @@ namespace EventHorizon.Basic.Bot
             }
         }
 
-        private static void StartClient()
         {
             if (client != null)
             {
@@ -60,15 +59,9 @@ namespace EventHorizon.Basic.Bot
                     MainChannel
                 )
                 {
-                    OnOpen = () => Task.Run(() => {
-                        Console.WriteLine("OnOpen");
-                    }),
-                    OnClose = (status, description) => Task.Run(() => {
-                        Console.WriteLine("OnClose");
-                    }),
-                    OnReceived = (message) => Task.Run(() => {
-                        Console.WriteLine("OnReceived");
-                    }),
+                    OnOpen = OnOpen,
+                    OnClose = OnClose,
+                    OnReceived = OnReceived,
                     OnConnected = () =>
                     {
                         Console.WriteLine("OnConnect");
